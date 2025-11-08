@@ -1,0 +1,8 @@
+from django.db import models
+from authentication.models import Auth
+
+class Status(models.Model) : 
+    user = models.ForeignKey(Auth,on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=50)
+    color = models.CharField(max_length=10)
+    createdAt = models.DateTimeField(auto_now=True)
